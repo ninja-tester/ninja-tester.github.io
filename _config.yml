@@ -1,9 +1,9 @@
 # Site wide configuration
 
-title: "My Site"
-description: "This is a description of my awesome site."
-logo: # 120x120 px default image used for Twitter summary card
-teaser: # 400x250 px default teaser image used in image archive grid
+title: "Ninja Tester Blog"
+description: "IT blog about software testing, automation, selenium, python, robots and other interesting geek stuff"
+logo: 120x120.png # 120x120 px default image used for Twitter summary card
+teaser: 400x250.jpg # 400x250 px default teaser image used in image archive grid
 locale: en
 url:
 feed:
@@ -25,7 +25,7 @@ gems:
 
 
 # Site owner
-owner:
+owner: 
   name:
   email:
   twitter:
