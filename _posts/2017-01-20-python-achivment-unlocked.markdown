@@ -1,7 +1,7 @@
 ---
 layout: article
 title:  "Python Achievement Unlocked"
-date:   2017-01-20 10:10:10 +0400
+date:   2017-01-20 17:00:00 +0400
 categories: python
 image:
  teaser: 400x250-python.jpg
