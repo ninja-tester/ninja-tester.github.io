@@ -2,7 +2,7 @@
 layout: article
 title:  "Добро пожаловать!!"
 date:   2017-03-10 10:10:10 +0400
-categories: jekyll update
+categories: news
 image:
  teaser: 400x250-welcome.jpg
 ---
