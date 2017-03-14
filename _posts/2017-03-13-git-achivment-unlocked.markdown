@@ -1,7 +1,7 @@
 ---
 layout: article
 title:  "Git Achievement Unlocked"
-date:   2017-03-13 10:10:10 +0400
+date:   2017-03-14 10:10:10 +0400
 categories: git
 image:
  teaser: 400x250-git.jpg
