@@ -4,7 +4,9 @@ title:  "Zowi"
 date:   2017-03-14 18:10:00 +0400
 categories: arduino
 image:
- teaser: 400x250-zowi-hello.jpg
+  feature: 2017-03-14-zowi/zowi_tablet.jpg
+  teaser: 2017-03-14-zowi/zowi.jpg
+  thumb:
 ---
 
 Есть такой испанский робот Zowi.
