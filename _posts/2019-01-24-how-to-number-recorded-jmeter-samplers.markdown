@@ -19,11 +19,11 @@ Next we do the following with it:
 5. In the text field to the right of it we indicate the first prefix, for example "1.1." - this value will be added to the name of each recorded request.
 6. Specify after what time (in milliseconds) a new Transaction Controller will be created for requests.
 
-	![alert](/images/2019-01-24-how-to-number_recorder_jmeter_samplers/https_script_recorder.png)  
+	![alert](/images/2019-01-24-how-to-number-recorded-jmeter-samplers/https_script_recorder.png)  
 
 During the recording process, this window will appear, with which we can manage the naming:
 
-![alert](/images/2019-01-24-how-to-number_recorder_jmeter_samplers/recorder_transaction_controls.png)  
+![alert](/images/2019-01-24-how-to-number-recorded-jmeter-samplers/recorder_transaction_controls.png)  
 
 Here, if we need to write the next block, we change the prefix - after that, for the following requests, a new Transaction Controller will be created with such a prefix.
 
