@@ -23,14 +23,14 @@ You may follow steps from this post to fix that `SEC_ERROR_UNKNOWN_ISSUER`:
 4. Do actions with your web application to record requests.
 
 
-How to remove old and add new certificates in Firefox:
+How to remove old and add new certificates in Firefox
 
 1. Start Firefox
 2. Open menu
 3. Options
 4. Privacy & Security
 5. View Cerificates
-6. Ensure there are no certificates with names "_DO NOT INSTALL..", "DO NOT INSTALL..", "JMETER.." and other related to JMeter cerificates, or Delete them if they are present.
+6. Ensure there are no certificates with names "_DO NOT INSTALL..", "DO NOT INSTALL..", "JMETER.." and other related to JMeter certificates, and Delete them if they are present.
 7. Click Import.
 8. Navigate to your JMeter bin dir and choose `ApacheJMeterTemporaryRootCA.crt` file.
 9. Check Trust this CA to identify websites.
