@@ -8,7 +8,7 @@ image:
  feature: 2019-01-31-how-to-use-jmeter-thread-sampler-testplan-names/feature.png
 ---
 
-In some cases in our load test scenarois we need to get the sampler, thread group or even test plan names ans save them as varables.
+In some cases in our load test scenarios we need to get the sampler, thread group or even test plan names ans save them as varables.
 
 For example you can send email notification with text like this:
 {% highlight sql %}
