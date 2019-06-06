@@ -8,47 +8,48 @@ image:
  feature: 2019-05-06-android-monkey-testing/What-Is-Monkey-Testing.png
 ---
 
-В статье опишу, как использовать утилиту для Monkey testing.
-Называется она UI/Application Exerciser Monkey, или просто Обезъянка.
-Приложение генерирует огромное количество случайных нажатий на экране, проводя таким образом стресс-тестироваие.
+В статье опишу, как запустить Monkey testing на Android с помощью встроенной утилиты.
+Называется она UI/Application Exerciser Monkey, или просто Обезьянка и позволяет провести стресс-тестирование вашего приложения.
+
+Приложение генерирует огромное количество случайных действий, таких как нажатия, клики, тапы, свайпы, а так же нажатия на системные кнопки.
 
 Предусловие:
 
-1. Наличие установленного приложения на устройстве \ эмуляторе.
+1. Установить Android SDK.
 
-2. Установленное Android SDK
+2. Установить тестируемое приложение на устройство \ эмулятор.
 
-3. Узнать имя пакета Android приложения
+3. Узнать имя пакета Android приложения.
 
 Для запуска в консоли пишем:
-{% highlight sql %}
-adb shell monkey -p package -v 500
+{% highlight shell %}
+adb shell monkey -p packagename -v 500
 {% endhighlight %}
 
-где `package` - имя пакета, например `com.google.gms`, а -v 500 - количество необходимых действий и наблюдаем как быстро беспорядочно обезъянка тапаем по экрану нашего приложения.
+где `packagename` - имя пакета тестируемого приложения, например `com.google.gms`, а с помощю ключа `-v` мы передаём количество действий, выполняемых Обезъянкой, в нашем случае `500`.- количество необходимых действий и наблюдаем как быстро беспорядочно обезъянка тапаем по экрану нашего приложения.
 
 В таком случае некоторые тапы попадют не только по приложению, но и по системным элементам. Для того, чтобы исключить взаимодействие обезъянки с системными кнопками (Home, Back, App, Sound) необходимо добавить ключ  `--pct-syskeys 0`, где 0 - коилчество тапо в по системным элементам в процентах, в нашем случае это 0%:
-{% highlight sql %}
-adb shell monkey --pct-syskeys 0 -p package -v 500
+{% highlight shell %}
+adb shell monkey --pct-syskeys 0 -p packagename -v 500
 {% endhighlight %}
 
 В таком варианте запуска между нажатиями по экрану пауза отсутствует. Для того, чтобы добавить паузу и иметь возможность наблюдать за происходящим на экране добавим ключ `--throttle 100` - задержка в миллисекундах между нажатиями:
-{% highlight sql %}
-adb shell monkey --pct-syskeys 0 --throttle 100 -p package -v 500
+{% highlight shell %}
+adb shell monkey --pct-syskeys 0 --throttle 100 -p packagename -v 500
 {% endhighlight %}
 
 Ещё один полезный параметр - номер теста. Если при запуске мы задам номер теста, то при повторном запуске с таким же параметром последовательность действий будет идентична.
 Это полезно в случае, если во время теста была обнаружена проблема производительности (утекла память), то после исправления проблемы можно проверить с таким же параметром -s N, где N - номер теста. Номер можно автоматически инкрементировать, генерировать случайный или брать, например, номер сборки или ревизию из репозитория, как угодно:
-{% highlight sql %}
-adb shell monkey -s 1 --pct-syskeys 0 --throttle 100 -p package -v 500
+{% highlight shell %}
+adb shell monkey -s 1 --pct-syskeys 0 --throttle 100 -p packagename -v 500
 {% endhighlight %}
 
 Если во время теста случился крэш, то полезно остановить выполнение Обезъянки, чтобы она не продолжала свою работу. Для этого добавляем параметр `--kill-process-after-error`:
-{% highlight sql %}
-adb shell monkey -s 1 --pct-syskeys 0 --throttle 100 --kill-process-after-error -p package -v 500
+{% highlight shell %}
+adb shell monkey -s 1 --pct-syskeys 0 --throttle 100 --kill-process-after-error -p packagename -v 500
 {% endhighlight %}
 
 И наконец, если мы запускаем тесты в атомате и на консоли, то было бы полезно сохранять логи в файл для их дальнейшей обработки или прикрепления в качестве отчёта. Для этого перенаправляем вывод в файл: ` > monkeyreport.txt`
-{% highlight sql %}
-adb shell monkey -s 1 --pct-syskeys 0 --throttle 100 --kill-process-after-error -p package -v 500 > monkeyreport.txt
+{% highlight shell %}
+adb shell monkey -s 1 --pct-syskeys 0 --throttle 100 --kill-process-after-error -p packagename -v 500 > monkeyreport.txt
 {% endhighlight %}
